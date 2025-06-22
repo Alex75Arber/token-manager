@@ -31,10 +31,44 @@
       font-family: var(--font-primary);
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center; /* Center the password prompt */
       min-height: 100vh;
       padding: 2rem;
     }
+    /* Styles for the password prompt */
+    #password-prompt {
+      background-color: var(--background-secondary);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    #password-prompt h2 { margin-bottom: 1rem; }
+    #password-prompt input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid var(--background-tertiary);
+      background-color: var(--background-primary);
+      color: var(--text-normal);
+      font-size: 1rem;
+    }
+    #password-prompt button {
+      width: 100%;
+      padding: 0.75rem 1.5rem;
+      background: var(--brand-primary);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    #password-prompt button:hover { background-color: var(--brand-primary-hover); }
+
     .container {
       width: 100%;
       max-width: 700px;
@@ -43,56 +77,43 @@
       border-radius: 8px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
+    /* Other styles are the same */
     header h1 { text-align: center; margin-bottom: 1.5rem; font-weight: 600; }
     .add-bot-form { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .add-bot-form input {
-      flex-grow: 1; padding: 0.75rem; border-radius: 5px; border: 1px solid var(--background-tertiary);
-      background-color: var(--background-primary); color: var(--text-normal); font-family: var(--font-primary);
-      font-size: 1rem; transition: border-color 0.2s ease;
-    }
+    .add-bot-form input { flex-grow: 1; padding: 0.75rem; border-radius: 5px; border: 1px solid var(--background-tertiary); background-color: var(--background-primary); color: var(--text-normal); font-family: var(--font-primary); font-size: 1rem; transition: border-color 0.2s ease; }
     .add-bot-form input:focus { outline: none; border-color: var(--brand-primary); }
     .add-bot-form input::placeholder { color: var(--text-muted); }
-    .add-bot-form button {
-      padding: 0.75rem 1.5rem; background: var(--brand-primary); border: none; border-radius: 5px; color: white;
-      font-family: var(--font-primary); font-size: 1rem; font-weight: 500; cursor: pointer; transition: background-color 0.2s ease;
-    }
+    .add-bot-form button { padding: 0.75rem 1.5rem; background: var(--brand-primary); border: none; border-radius: 5px; color: white; font-family: var(--font-primary); font-size: 1rem; font-weight: 500; cursor: pointer; transition: background-color 0.2s ease; }
     .add-bot-form button:hover { background-color: var(--brand-primary-hover); }
     .add-bot-form button .fa-plus { margin-right: 0.5rem; }
-    .bot-list-controls {
-        display: flex; justify-content: space-between; align-items: center;
-        border-bottom: 1px solid var(--background-tertiary); padding-bottom: 0.5rem;
-    }
+    .bot-list-controls { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--background-tertiary); padding-bottom: 0.5rem; }
     .bot-list-header { font-size: 1.2rem; font-weight: 600; color: var(--text-normal); }
     .list-actions { display: flex; gap: 0.5rem; }
-    .list-actions .btn-secondary {
-        padding: 0.5rem 1rem; background: var(--background-tertiary); border: 1px solid var(--text-muted);
-        border-radius: 5px; color: var(--text-normal); font-family: var(--font-primary);
-        font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease;
-    }
+    .list-actions .btn-secondary { padding: 0.5rem 1rem; background: var(--background-tertiary); border: 1px solid var(--text-muted); border-radius: 5px; color: var(--text-normal); font-family: var(--font-primary); font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease; }
     .list-actions .btn-secondary:hover { background: var(--background-primary); border-color: var(--brand-primary); }
     .list-actions .btn-secondary i { margin-right: 0.5rem; }
     .bot-list { list-style: none; padding: 0; }
     .empty-state { text-align: center; padding: 2rem; color: var(--text-muted); }
-    .bot-item {
-      background-color: var(--background-tertiary); padding: 1rem 1.5rem; margin-top: 1rem; border-radius: 5px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-    }
+    .bot-item { background-color: var(--background-tertiary); padding: 1rem 1.5rem; margin-top: 1rem; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .bot-info { flex-grow: 1; min-width: 200px; }
     .bot-info .bot-name { font-weight: 600; font-size: 1.1rem; color: #fff; }
     .bot-info .bot-token { font-family: monospace; color: var(--text-muted); font-size: 0.9rem; word-break: break-all; }
     .bot-actions { display: flex; gap: 0.75rem; }
-    .bot-actions button {
-        background: none; border: 1px solid var(--text-muted); color: var(--text-muted); width: 40px; height: 40px;
-        border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; justify-content: center; align-items: center;
-        transition: all 0.2s ease;
-    }
+    .bot-actions button { background: none; border: 1px solid var(--text-muted); color: var(--text-muted); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; justify-content: center; align-items: center; transition: all 0.2s ease; }
     .bot-actions .btn-copy:hover { background-color: var(--brand-primary); border-color: var(--brand-primary); color: #fff; }
     .bot-actions .btn-toggle-visibility:hover { background-color: var(--success-primary); border-color: var(--success-primary); color: #fff; }
     .bot-actions .btn-delete:hover { background-color: var(--danger-primary); border-color: var(--danger-primary); color: #fff; }
   </style>
 </head>
 <body>
-  <main class="container">
+
+  <div id="password-prompt">
+    <h2>Enter Password</h2>
+    <input type="password" id="password-input" placeholder="Password" />
+    <button id="password-submit">Access</button>
+  </div>
+
+  <main class="container" id="app-container" style="display: none;">
     <header><h1>Secure Discord Bot Token Manager</h1></header>
     <form class="add-bot-form" id="addBotForm">
       <input type="text" id="botName" placeholder="Enter Bot Name" required />
@@ -111,7 +132,38 @@
 
     <ul id="botList"></ul>
   </main>
+  
   <script>
+    // --- PASSWORD PROTECTION SCRIPT ---
+    // ##################################################################
+    // ### CHANGE YOUR PASSWORD HERE ###
+    const CORRECT_PASSWORD = 'your-secret-password';
+    // ##################################################################
+
+    const passwordPrompt = document.getElementById('password-prompt');
+    const passwordInput = document.getElementById('password-input');
+    const passwordSubmit = document.getElementById('password-submit');
+    const appContainer = document.getElementById('app-container');
+
+    function attemptLogin() {
+        if (passwordInput.value === CORRECT_PASSWORD) {
+            passwordPrompt.style.display = 'none';
+            appContainer.style.display = 'block';
+            document.body.style.alignItems = 'flex-start'; // Re-align body after login
+        } else {
+            alert('Incorrect password!');
+            passwordInput.value = '';
+        }
+    }
+    
+    passwordSubmit.addEventListener('click', attemptLogin);
+    passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            attemptLogin();
+        }
+    });
+
+    // --- MAIN APPLICATION SCRIPT ---
     document.addEventListener('DOMContentLoaded', () => {
       const addBotForm = document.getElementById('addBotForm');
       const botNameInput = document.getElementById('botName');
@@ -172,32 +224,23 @@
         saveBots(); renderBots();
       });
 
-      // MODIFIED EXPORT FUNCTIONALITY
       exportBtn.addEventListener('click', () => {
         if (botData.length === 0) {
           alert("There's nothing to export!");
           return;
         }
-        
-        // 1. Ask user for a filename, providing a default
         let filename = prompt("Enter a filename for your backup:", "discord_bots.json");
-
-        // 2. If user clicks "Cancel" or enters nothing, stop the function
         if (!filename) {
           return;
         }
-
-        // 3. Ensure the filename ends with .json
         if (!filename.toLowerCase().endsWith('.json')) {
           filename += '.json';
         }
-
         const dataStr = JSON.stringify(botData, null, 2);
         const dataBlob = new Blob([dataStr], { type: 'application/json' });
         const url = URL.createObjectURL(dataBlob);
         const link = document.createElement('a');
         link.href = url;
-        // 4. Use the user-provided filename for the download
         link.download = filename;
         document.body.appendChild(link);
         link.click();
