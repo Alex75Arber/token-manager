@@ -134,14 +134,12 @@
   </main>
   
   <script>
-   
-  const CORRECT_PASSWORD = 'e9c5c2d7e8b9a0f1d2c3b4a5e6d7c8b9a0f1d2c3b4a5e6d7c8b9a0f1d2c3b4a5';
+    // --- PASSWORD PROTECTION SCRIPT ---
+    // ##################################################################
+    // ### CHANGE YOUR PASSWORD HERE ###
+    const CORRECT_PASSWORD = 'your-secret-password';
+    // ##################################################################
 
-function attemptLogin() {
-    const enteredPassword = passwordInput.value;
-   
-    alert("This is still easily bypassed!")
-}
     const passwordPrompt = document.getElementById('password-prompt');
     const passwordInput = document.getElementById('password-input');
     const passwordSubmit = document.getElementById('password-submit');
@@ -151,7 +149,7 @@ function attemptLogin() {
         if (passwordInput.value === CORRECT_PASSWORD) {
             passwordPrompt.style.display = 'none';
             appContainer.style.display = 'block';
-            document.body.style.alignItems = 'flex-start'; 
+            document.body.style.alignItems = 'flex-start'; // Re-align body after login
         } else {
             alert('Incorrect password!');
             passwordInput.value = '';
@@ -165,7 +163,7 @@ function attemptLogin() {
         }
     });
 
-  
+    // --- MAIN APPLICATION SCRIPT ---
     document.addEventListener('DOMContentLoaded', () => {
       const addBotForm = document.getElementById('addBotForm');
       const botNameInput = document.getElementById('botName');
